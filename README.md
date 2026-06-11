@@ -1,4 +1,4 @@
-# HabitMinimal - Tracker de Hábitos
+# HabiTraker - Tracker de Hábitos
 
 Un gestor de hábitos simple que cumple con los requisitos del proyecto. Permite crear hábitos y marcarlos como completados.
 
