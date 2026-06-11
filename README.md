@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HabitMinimal - Tracker de Hábitos
 
-## Getting Started
+Un gestor de hábitos simple que cumple con los requisitos del proyecto. Permite crear hábitos y marcarlos como completados.
 
-First, run the development server:
+## Decisiones Técnicas
+* **Next.js (App Router):** Elegido por rapidez y porque permite unificar frontend y backend en un solo proyecto.
+* **Drizzle ORM + SQLite:** Se usó SQLite local (`dev.db`) para no perder tiempo configurando servicios en la nube (PostgreSQL/Supabase). Drizzle permite hacer consultas con pocas líneas de código.
+* **Tailwind CSS:** Para el diseño, usando componentes básicos y limpios sin complicar el CSS.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Cómo arrancarlo en local
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Clonar el repositorio e instalar dependencias:
+   ```bash
+   npm install
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+2. Ejecutar las migraciones de la base de datos:
+   ```bash
+   npx drizzle-kit push
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Arrancar el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
+4. Abrir `http://localhost:3000`.
 
-## Learn More
+## Uso de IA 
+* **IAs que he usado y para que:**
+* Geminy: Codigo general, correciones de texto, dudas sobre el proyecto (sobre todo Next.js y Drizzle) y este archivo
+* BlackBox: Correción de codigo
+* **¿Qué le pedí?:** Le pedí que me generara la configuración inicial de `drizzle.config.ts` y el esquema básico de la tabla de hábitos en SQLite para ahorrar tiempo buscando la sintaxis exacta.
+* **¿Qué tuve que corregir?:** La IA importó erróneamente componentes de una versión antigua de Next.js (`next/router` en lugar de `next/navigation`) para el redireccionamiento, lo cual rompía la app en el App Router. Lo corregí manualmente pasándolo a Server Actions simples, ademas comence a hacer el codigo en Visual Studio, en ved en el Code, es un error menor y no me llevo tiempo corregirlo pero creo que merece la pena comentarlo, tambien corregi varios errores que tienen que ver con instalaciones de programas, comandos mal escritos o permisos que no tenia el VSC.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
