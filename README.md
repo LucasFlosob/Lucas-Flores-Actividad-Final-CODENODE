@@ -29,7 +29,8 @@ Un gestor de hábitos simple que cumple con requisitos del proyecto. Permite cre
 
 ## Uso de IA 
 *IAs utilizadas y para que:
--Geminy (
-*Le pedí que me generara la configuración inicial de `drizzle.config.ts` y el esquema básico de la tabla de hábitos en SQLite para ahorrar tiempo buscando la sintaxis exacta.
-*Le pedi que me ayudase a corregir este mismo documento para adptarlo a GIT
+* Geminy (Para este archivo y para información sobre Node.js y atajos de VSC
+* BlackBox para codigo y correcciones posteriores
+* **Le pedí que me generara la configuración inicial de `drizzle.config.ts` y el esquema básico de la tabla de hábitos en SQLite para ahorrar tiempo buscando la sintaxis exacta.
+* **Le pedi que me ayudase a corregir este mismo documento para adptarlo a GIT
 * **¿Qué tuve que corregir?:** La IA importó erróneamente componentes de una versión antigua de Next.js (`next/router` en lugar de `next/navigation`) para el redireccionamiento, lo cual rompía la app en el App Router. Lo corregí manualmente pasándolo a Server Actions simples.
